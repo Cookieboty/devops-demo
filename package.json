@@ -25,7 +25,8 @@
     "egg": "^2.6.1",
     "egg-helper": "^1.1.5",
     "egg-scripts": "^2.6.0",
-    "egg-shell-decorators": "^1.6.0"
+    "egg-shell-decorators": "^1.6.0",
+    "qs": "^6.10.1"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
