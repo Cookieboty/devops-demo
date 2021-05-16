@@ -1,19 +1,30 @@
-# hackernews-async-ts
-
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+<!--
+ * @Author: Cookie
+ * @Date: 2021-05-09 14:46:32
+ * @LastEditors: Cookie
+ * @LastEditTime: 2021-05-16 16:54:49
+ * @Description: 
+-->
 
 ## QuickStart
+
+[基于 Node 的 DevOps 实战](https://juejin.cn/book/6948353204648148995)
+
+根据教程安装项目环境 
+
+新建数据库 devops_dev
+
+```bash
+$ yarn
+$ npx sequelize db:migrate // 执行数据库变更
+```
 
 ### Development
 
 ```bash
-$ npm i
-$ npm run dev
+$ yarn dev
 $ open http://localhost:7001/
 ```
-
-Don't tsc compile at development mode, if you had run `tsc` then you need to `npm run clean` before `npm run dev`.
-
 ### Deploy
 
 ```bash

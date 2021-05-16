@@ -1,0 +1,146 @@
+<html>
+  <head></head>
+  <body>
+    <div>
+      <div align="center">
+        <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="656" style="width:492.25pt;border-collapse:collapse;mso-yfti-tbllook:1184; mso-padding-alt:0cm 0cm 0cm 0cm">
+          <tbody>
+            <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:27.8pt">
+              <td width="656" nowrap="" colspan="3" valign="top" style="width:492.25pt;border:solid black 1.0pt;  background:#DBE5F1;padding:0cm 5.4pt 0cm 5.4pt;height:27.8pt">
+                <p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">
+                  <b>
+                    <span style="font-size:22.0pt;color:#1F497D">
+                                 测试通过
+                              </span>
+                  </b>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:DengXian;  mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:  1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr style="mso-yfti-irow:1;height:46.9pt">
+              <td width="108" colspan="2" valign="top" style="width:80.95pt;border:solid black 1.0pt;  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;  height:46.9pt">
+                <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:  6.0pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;  mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-indent:5.25pt">
+                  <b>
+                    <span style="font-size:10.5pt;font-family:&quot;微软雅黑&quot;,sans-serif;color:black">
+                                 提测版本
+                              </span>
+                  </b>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+              <td width="548" style="width:411.3pt;border-top:none;border-left:none;  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;  height:46.9pt">
+                <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:  6.0pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;  mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm">
+                  {% for iteration in iterationMail %}
+                    <p style="margin-left:5.0pt;margin-top:10.0pt;font-size: 10.5pt;mso-bidi-font-size:11.0pt;font-family:DengXian;mso-bidi-font-family:  &quot;Times New Roman&quot;mso-font-kerning:1.0pt">
+                      <a href="https://www.tapd.cn/{{iteration.projectWorkspace}}/prong/iterations/card_view#{{iteration.iterationId}}">
+                        {{loop.index}}.{{ iteration.name }}
+                      </a>
+                    </p>
+                  {% else %}
+                  {% endfor %}
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr style="mso-yfti-irow:1;height:46.9pt">
+              <td width="108" colspan="2" valign="top" style="width:80.95pt;border:solid black 1.0pt;  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;  height:46.9pt">
+                <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:  6.0pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;  mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-indent:5.25pt">
+                  <b>
+                    <span style="font-size:10.5pt;font-family:&quot;微软雅黑&quot;,sans-serif;color:black">
+                                 提测功能模块
+                              </span>
+                  </b>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+              <td width="548" style="width:411.3pt;border-top:none;border-left:none;  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;  height:46.9pt">
+                <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:  6.0pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;  mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm">
+                  {% for story in storyMail %}
+                    <p style="margin-left:5.0pt;margin-top:10.0pt;font-size: 10.5pt;mso-bidi-font-size:11.0pt;font-family:DengXian;mso-bidi-font-family:  &quot;Times New Roman&quot;mso-font-kerning:1.0pt">
+                      <a href="https://www.tapd.cn/{{story.projectWorkspace}}/prong/stories/view/{{story.story_id}}">
+                        {{loop.index}}.{{ story.name }}
+                      </a>
+                    </p>
+                  {% else %}
+                  {% endfor %}
+                  <p>{{exitInfo.title|safe}}</p>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr style="mso-yfti-irow:2;height:31.45pt">
+              <td width="656" nowrap="" colspan="3" style="width:492.25pt;border:solid black 1.0pt;  border-top:none;mso-border-top-alt:solid black 1.0pt;background:#DBE5F1;  padding:0cm 5.4pt 0cm 5.4pt;height:31.45pt">
+                <p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">
+                  <b>
+                    <span style="font-size:22.0pt;color:#17365D">
+                                          测试内容
+                                       </span>
+                  </b>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:DengXian;  mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:  1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr style="mso-yfti-irow:7;height:7.2pt">
+              <td width="106" nowrap="" valign="top" style="width:79.65pt;border:solid black 1.0pt;  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;  height:7.2pt">
+                <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:  6.0pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;  mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm">
+                  <b>
+                    <span style="font-size:10.5pt;font-family:&quot;微软雅黑&quot;,sans-serif;color:black">
+                                          测试内容详情
+                                       </span>
+                  </b>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+              <td width="550" nowrap="" colspan="2" style="width:412.6pt;border-top:none;  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;  padding:0cm 5.4pt 0cm 5.4pt;height:7.2pt">
+                <p class="MsoCommentText">
+                  <span>{{testInfo|safe}}</span>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <tr style="mso-yfti-irow:7;height:7.2pt">
+              <td width="106" nowrap="" valign="top" style="width:79.65pt;border:solid black 1.0pt;  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;  height:7.2pt">
+                <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:  6.0pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;  mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm">
+                  <b>
+                    <span style="font-size:10.5pt;font-family:&quot;微软雅黑&quot;,sans-serif;color:black">
+                                          测试人
+                                       </span>
+                  </b>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+              <td width="550" nowrap="" colspan="2" style="width:412.6pt;border-top:none;  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;  padding:0cm 5.4pt 0cm 5.4pt;height:7.2pt">
+                <p class="MsoCommentText">
+                  <span>{{testUser}}</span>
+                  <span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:  DengXian;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;  mso-font-kerning:1.0pt">
+                    <o:p></o:p>
+                  </span>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--EndFragment-->
+      <br/>
+    </div>
+  </body>
+</html>

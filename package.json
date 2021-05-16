@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "devops-demo",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,9 +8,14 @@
     "declarations": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-example",
-    "stop": "egg-scripts stop --title=egg-server-example",
-    "dev": "egg-bin dev",
+    "startTest": "ets && tsc -p tsconfig.json && EGG_SERVER_ENV=test egg-scripts start --port=8001  --title=egg-server-devops-demo --daemon  --sticky",
+    "stopTest": "egg-scripts stop --title=egg-server-devops-demo",
+    "startPre": "ets && tsc -p tsconfig.json && EGG_SERVER_ENV=prod egg-scripts start --port=9001 --title=egg-server-pre-devops-demo --daemon",
+    "stopPre": "egg-scripts stop --title=egg-server-pre-devops-demo",
+    "startProd": "ets && tsc -p tsconfig.json && EGG_SERVER_ENV=prod egg-scripts start --port=1001 --title=egg-server-prod-devops-demo --daemon",
+    "stopProd": "egg-scripts stop --title=egg-server-prod-devops-demo",
+    "stop": "egg-scripts stop --title=egg-server-process",
+    "dev": "egg-bin dev  --sticky",
     "debug": "egg-bin debug",
     "test-local": "egg-bin test",
     "test": "npm run lint -- --fix && npm run test-local",
@@ -22,11 +27,22 @@
     "clean": "ets clean"
   },
   "dependencies": {
+    "@types/jenkins": "^0.23.1",
+    "crypto": "^1.0.1",
     "egg": "^2.6.1",
     "egg-helper": "^1.1.5",
+    "egg-jwt": "^3.1.7",
     "egg-scripts": "^2.6.0",
-    "egg-shell-decorators": "^1.6.0",
-    "qs": "^6.10.1"
+    "egg-sequelize": "^5.2.2",
+    "egg-shell-decorators": "^1.5.0",
+    "egg-socket.io": "^4.1.6",
+    "jenkins": "^0.28.0",
+    "jenkins-api": "^0.3.1",
+    "marked": "^1.1.1",
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.11",
+    "nunjucks": "^3.2.2",
+    "qs": "^6.9.4"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
@@ -36,9 +52,12 @@
     "autod-egg": "^1.1.0",
     "egg-bin": "^4.11.0",
     "egg-ci": "^1.8.0",
+    "egg-cors": "^2.2.3",
     "egg-mock": "^3.16.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-egg": "^8.0.0",
+    "sequelize-cli": "^6.2.0",
     "tslib": "^1.9.0",
     "typescript": "^3.0.0"
   },
@@ -55,6 +74,6 @@
   "eslintIgnore": [
     "coverage"
   ],
-  "author": "",
+  "author": "cookieboty",
   "license": "MIT"
 }

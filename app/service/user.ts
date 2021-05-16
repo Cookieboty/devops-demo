@@ -1,16 +1,30 @@
-import { Service } from 'egg';
+/*
+ * @Author: Cookie
+ * @Date: 2020-07-29 20:14:37
+ * @LastEditors: Cookie
+ * @LastEditTime: 2021-05-16 11:07:59
+ * @Description: 用户模块
+ */
+import { Service } from "egg";
+import { CLIENT_ID, CLIENT_SECRET } from '../config/default.config';
 
 export default class User extends Service {
 
-  public async getUserToken({ username, password }) {
-    const { data: token } = await this.ctx.helper.utils.http.post(
-      '/oauth/token',
-      {
-        grant_type: 'password',
-        username,
-        password,
+  /**
+   * @author: Cookie
+   * @description: 使用 gitLab api 获取 access_token
+   */
+  public async getTokenByApplications({ code }) {
+    const { data: token } = await this.ctx.helper.utils.http.post({
+      url: '/oauth/token',
+      params: {
+        grant_type: 'authorization_code',
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
+        code,
+        redirect_uri: 'http://127.0.0.1:7001/user/getTokenByApp',
       },
-    );
+    });
 
     if (token && token.access_token) {
       return token;
@@ -18,21 +32,79 @@ export default class User extends Service {
     return false;
   }
 
-  public async getTokenByApplications({ code }) {
-    const { data: token } = await this.ctx.helper.utils.http.post(
-      '/oauth/token',
-      {
-        grant_type: 'authorization_code',
-        client_id: '606e33d507674f99d1ac16877766eca0db448c26a6fdddf5b76e850dac0d2421',
-        client_secret: '21346c11a255c64b25fd4b75ecbf80d0e702a992dc616acd741608905d61892f',
-        code,
-        redirect_uri: 'http://127.0.0.1:7001/user/getTokenByApp',
+  /**
+   * @author: Cookie
+   * @description: 使用 gitLab api 获取 access_token
+   */
+  public async getUserToken({ username, password }) {
+    const { data: token } = await this.ctx.helper.utils.http.post({
+      url: '/oauth/token',
+      params: {
+        grant_type: 'password',
+        username,
+        password,
       },
-    );
+    });
 
     if (token && token.access_token) {
       return token;
     }
     return false;
+  }
+
+  /**
+   * @author: Cookie
+   * @description: 使用 gitLab api 获取 gitLab 用户信息
+   */
+  public async getUserInfo({ access_token }) {
+    const userInfo = await this.ctx.helper.api.gitLab.user.getUserInfo({
+      access_token,
+    });
+    return userInfo;
+  }
+
+  /**
+   * @author: Cookie
+   * @description: 用户信息本地落库
+   */
+  public async saveUser({ userInfo }) {
+    const { ctx } = this;
+    const {
+      id,
+      name,
+      username,
+      email,
+      avatar_url: avatarUrl,
+      web_url: webUrl,
+    } = userInfo;
+
+    // 查询用户是否已经落库
+    ctx.model.User.findOrCreate({
+      where: {
+        id,
+      },
+      defaults: {
+        id,
+        name,
+        username,
+        email,
+        avatarUrl,
+        webUrl,
+      }
+    }).then(([user, created]) => {
+      if (!created) {
+        ctx.model.User.update({
+          name,
+          username,
+          email,
+          avatarUrl,
+          webUrl,
+        }, {
+          where: {
+            id,
+          }
+        })
+      }
+    });
   }
 }

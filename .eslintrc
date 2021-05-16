@@ -1,6 +1,94 @@
-{
-  "extends": "eslint-config-egg/typescript",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
-}
+module.exports = {
+  env: {
+    es6: true,
+    node: true,
+  },
+  extends: [
+    'airbnb-base',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: [
+    '@typescript-eslint',
+  ],
+  rules: {
+    'linebreak-style': ['off', 'windows'
+    ],
+    strict: 'off',
+    'valid-jsdoc': 'off',
+    'no-empty-pattern': 'off',
+    indent: ['error',
+      2
+    ], // 缩进风格
+    semi: [
+      2, 'always'
+    ], // 句尾强制分号
+    eqeqeq: 2, // 要求使用 === 和 !==
+    'no-alert': [
+      2
+    ], // 禁止使用alert confirm prompt
+    quotes: [
+      2, 'single'
+    ], // 单引号
+    'arrow-parens': 2, // 箭头函数用小括号括起来
+    'comma-spacing': ['error',
+      { before: false, after: true
+      }
+    ], // 逗号前后的空格
+    'no-trailing-spaces': [
+      2
+    ], // 语句前后空格
+    'key-spacing': [
+      2,
+      { beforeColon: false, afterColon: true
+      }
+    ], // 对象字面量中冒号的前后空格
+    'space-before-function-paren': [
+      2, 'never'
+    ], // 函数定义时括号前面要不要有空格
+    'no-unreachable': 2, // 不能有无法执行的代码
+    'spaced-comment': 2, // 注释风格，//后加空格
+    'padded-blocks': ['error',
+      { classes: 'always'
+      }
+    ],
+    'import/no-unresolved': 'off',
+    camelcase: 'off',
+    'consistent-return': 'off',
+    'prefer-destructuring': 'off',
+    'no-plusplus': 'off',
+    'no-unused-vars': 'off',
+    'class-methods-use-this': 'off',
+    'import/prefer-default-export': 'off',
+    'no-useless-escape': 'off',
+    'no-underscore-dangle': 'off',
+    'no-param-reassign': 'off',
+    'import/extensions': 'off',
+    'no-useless-return': 'off',
+    'no-else-return': 'off',
+    'no-await-in-loop': 'off',
+    'comma-dangle': ['error',
+      { // 数组、对象逗号风格
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'ignore',
+      }
+    ],
+    'max-len': ['error',
+      { code: 200
+      }
+    ],
+    'no-return-await': 'off',
+    'arrow-body-style': 'off',
+    'no-new': 'off',
+  },
+};
