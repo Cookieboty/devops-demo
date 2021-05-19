@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2019-09-12 15:47:15
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-16 11:56:14
+ * @LastEditTime: 2021-05-19 20:28:42
  * @Description:
  */
 
@@ -17,7 +17,7 @@ const getJenkins = function (
 ) {
   const jenkinsConfig = {
     h5: {
-      baseUrl: "http://cookieboty:123456@localhost:9001",
+      baseUrl: "http://cookieboty:qq123456@jenkins.cookieboty.com/",
       crumbIssuer: true,
     },
   };
