@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2020-08-02 10:32:06
  * @LastEditors: Cookie
- * @LastEditTime: 2020-08-05 22:28:42
+ * @LastEditTime: 2021-06-26 16:05:21
  * @Description: jwt 中间件
  */
 const excludeUrl = ["/user/getUserToken", '/user/getTokenByApp'];
@@ -17,8 +17,7 @@ export default () => {
       await next();
       return;
     }
-
-    const token = ctx.request.header.authorization;
+    const token = ctx.cookies.get('authorization') || ctx.request.header.authorization
 
     if (token) {
       try {
@@ -27,7 +26,7 @@ export default () => {
           token.replace("Bearer ", ""),
           ctx.app.config.jwt.secret
         );
-
+        console.log(deCode)
         ctx.user = deCode;
         await next();
       } catch (error) {

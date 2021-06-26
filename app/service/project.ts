@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2020-07-29 23:30:02
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-16 15:37:25
+ * @LastEditTime: 2021-06-26 20:18:49
  * @Description: 项目
  */
 import { Service } from "egg";
@@ -83,6 +83,7 @@ export default class Project extends Service {
       id: self_project.projectSourceId,
       access_token
     });
+
     return { ...self_project, ...project };
   }
 }

@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2020-07-29 20:14:37
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-16 11:07:59
+ * @LastEditTime: 2021-06-26 15:45:40
  * @Description: 用户模块
  */
 import { Service } from "egg";
@@ -22,7 +22,7 @@ export default class User extends Service {
         client_id: CLIENT_ID,
         client_secret: CLIENT_SECRET,
         code,
-        redirect_uri: 'http://127.0.0.1:7001/user/getTokenByApp',
+        redirect_uri: 'http://devops.cookieboty.com/user/getTokenByApp',
       },
     });
 

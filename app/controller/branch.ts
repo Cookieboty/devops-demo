@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2019-07-17 14:04:15
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-16 16:49:07
+ * @LastEditTime: 2021-06-26 20:19:22
  * @Description: 项目模块 Controller
  */
 
@@ -45,10 +45,14 @@ export default class BranchController extends BaseController {
     const { access_token } = user;
     const { projectId } = query;
     const { projectSourceId } = await ctx.service.project.getProject({ projectId, access_token });
+
     const branchList = await ctx.service.branch.getBranchList({
+      projectId,
       access_token,
       projectSourceId: projectSourceId,
     });
     this.success(branchList);
   }
+
+
 }

@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2019-08-21 19:51:36
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-16 16:41:33
+ * @LastEditTime: 2021-06-26 19:30:44
  * @Description:
  */
 
@@ -37,7 +37,10 @@ module.exports = app => {
         type: INTEGER,
         defaultValue: 0,
       },
-      branchNextStatus: INTEGER,
+      branchNextStatus: {
+        type: INTEGER,
+        defaultValue: 1,
+      },
       commit: {
         type: TEXT('long'),
         primaryKey: true,

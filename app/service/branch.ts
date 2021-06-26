@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2020-07-29 23:30:02
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-16 11:58:21
+ * @LastEditTime: 2021-06-26 19:29:19
  * @Description: 分支
  */
 import { Service } from "egg";
@@ -13,11 +13,13 @@ export default class Branch extends Service {
    * @description: 根据 gitLab api 获取分支 list，且数据落库
    */
   public async getBranchList({
+    projectId,
     projectSourceId,
     access_token,
     pageSize = 100,
     pageNum = 1,
   }) {
+
     const { ctx } = this;
     const branchList = await ctx.helper.api.gitLab.branch.getBranchList({
       projectId: projectSourceId,
@@ -28,7 +30,8 @@ export default class Branch extends Service {
 
     branchList.forEach((branch) => {
       branch.branchGitName = branch.name;
-      branch.projectId = projectSourceId;
+      branch.projectId = projectId;
+      branch.projectSourceId = projectSourceId;
       delete branch.name;
     });
 
@@ -40,7 +43,7 @@ export default class Branch extends Service {
 
     const local = await ctx.model.Branch.findAll({
       where: {
-        projectId: projectSourceId,
+        projectId,
       },
     });
     return local;

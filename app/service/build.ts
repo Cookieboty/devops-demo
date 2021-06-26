@@ -2,7 +2,7 @@
  * @Author: Cookie
  * @Date: 2020-08-05 16:28:21
  * @LastEditors: Cookie
- * @LastEditTime: 2021-05-19 20:20:07
+ * @LastEditTime: 2021-06-26 20:00:37
  * @Description: 构建
  */
 import { Service } from "egg";
@@ -19,7 +19,7 @@ export default class Build extends Service {
     projectGitPath,
     branchName,
     buildPath,
-    cache,
+    cache = false,
   }) {
     const { ctx } = this;
     const callBack = await ctx.helper.api.jenkins.index.buildJenkins({
